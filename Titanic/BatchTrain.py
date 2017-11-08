@@ -67,11 +67,9 @@ t0 = time.time()
 for j in range(number_of_batches):
 
 	X_batch, y_targets = get_train_data(number_of_samples)
-	print("Starting batch {}/{}".format(j+1, number_of_batches))
-	t1 = time.time()
+	print("Starting batch {}/{}".format(j+1, number_of_batches), end = "\r")
 	loss = aNN.train(sess, X_batch, y_targets)
-	t2 = time.time()
-	print("Batch completed. Duration: {}. Loss: {}".format(t2-t1, loss))
+
 
 t3 = time.time()
 print("Training completed. Duration: {}. Final loss: {}.".format(t3-t0, loss))
