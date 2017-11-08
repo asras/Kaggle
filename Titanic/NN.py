@@ -105,7 +105,7 @@ class NN:
 
 	def predict(self, sess, X):
 		feed_dict = {self.input_layer : X}
-		logits_array = sess.run([self.logits], feed_dict)
+		logits_array = sess.run([self.logits], feed_dict)[0]
 		preds = [np.argmax(logits) for logits in logits_array]
 		return preds
 
