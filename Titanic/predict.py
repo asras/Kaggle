@@ -37,7 +37,7 @@ def female_to_zero_male_to_one(ldf):
 
 df = pd.read_csv("test.csv")
 df_answer = df["PassengerId"]
-df.drop(["Name", "PassengerId", "Cabin"], 1, inplace=True)
+df.drop(["Name", "PassengerId", "Cabin", "Ticket"], 1, inplace=True)
 
 df = fill_avg_age_for_nans(df)
 df = fill_most_common_port_for_nans(df)
